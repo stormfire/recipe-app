@@ -1,24 +1,17 @@
-# README
+# Recipe App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample app is used to list recipies by fetching contents from Contentful API(https://www.contentful.com/developers/docs/)
 
-Things you may want to cover:
+* More details https://gist.github.com/lawitschka/063f2e28bd6993cac5f8b40b991ae899
 
-* Ruby version
+* Stagging: https://stag-recipie-app.herokuapp.com/
 
-* System dependencies
 
-* Configuration
+## Running Locally
+1. install ruby 2.6.6
+2. install bundler gem
+3. run bundle install
+4. run rails server
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Run tests
+1. bundle exec rspec
