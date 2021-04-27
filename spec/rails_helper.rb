@@ -60,7 +60,7 @@ end
 VCR.configure do |c|
     c.cassette_library_dir = Rails.root.join("spec", "vcr")
     c.ignore_localhost = true
-    c.stub_with :webmock
+    c.hook_into :webmock
     c.default_cassette_options = { record: :once }
 end
 
