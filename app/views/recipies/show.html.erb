@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row featurette margin-top-60"></div>
+</div>
+
+<hr class="featurette-divider">
+<div class="container recipe-details">
+    <div class="row featurette">
+        <div class="bg-image recipe-photo" style="background-image: url(<%= @recipe.photo.url %>);height: 400px;"></div>
+        
+        <div class="featurette-heading">
+            <h2> <%= @recipe.title%></h2>
+            <%= render "chef" if @recipe.chef %>
+        </div>
+        <br>
+        <div class="description">
+            <p class="lead"><%= @recipe.description %></p>
+            <p ><%= created_at_in_utc(@recipe.created_at) %></p>
+        </div>
+     </div>
+
+    <hr class="featurette-divider">
+
+    <%= render_tags_if_exists(@recipe.tags) %>    
+    
+    <div class="row featurette">
+        <%=link_to "Back", recipies_path %>
+    </div>
+</div>

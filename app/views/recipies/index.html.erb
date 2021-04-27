@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row featurette recipies-count margin-top-60" ><h3>Total Recipies : <%= @recipies.count %></h3></div>
+</div>
+<% @recipies.each_with_index do |recipe, index| %>
+  <hr class="featurette-divider">
+  <div class="row featurette recipe" id="<%= recipe.id %>" >
+    <div class="col-md-7 <%= is_odd_index(index) ? 'col-md-push-5' : '' %> ">
+      <h3 class="featurette-heading"> <%= link_to recipe.title, recipy_path(recipe.id) %></h3>
+      <p class="lead"><%= recipe.description%></p>
+    </div>
+    <div class="col-md-5 <%= is_odd_index(index)  ? 'col-md-pull-7' : '' %>">
+      <%= image_tag(recipe.photo.url, 
+          :class => "featurette-image img-responsive center-block", 
+          :data => {"src" => "holder.js/500x500/auto", "holder-rendered" => "true" }, 
+          :alt => "500x500") %>
+    </div>
+  </div>
+<% end %>
